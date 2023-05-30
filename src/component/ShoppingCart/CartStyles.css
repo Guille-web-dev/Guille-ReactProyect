@@ -1,0 +1,240 @@
+
+.cartContainerParent{
+    display: flex;
+    justify-content: center;
+    
+}
+.componentEmptyCart{
+    text-align: center;
+}
+.componentEmptyCart > h2 {
+    color: #0011ff;
+}
+.mainContainerCart{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    border: solid 1px #D9D9D9;
+    border-radius: 20px;
+    width: 60%;
+}
+.totalToPay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    margin: 1rem;
+    border: solid 1px #D9D9D9;
+    border-radius: 20px;
+}
+.totalPayInfoContainer{
+    width: 100%;
+}
+
+.totalPayInfoContainer > p {
+    color: blue;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 1rem;
+    margin-top: 2.5rem;
+}
+.paymentTypeDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+.paymentTypeDetails > p {
+    color: #0011ff;
+    font-size: 1.2rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+.paymentButtonsContainer{
+    width: 90%;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem;
+}
+.buttonPesos{
+    border: solid 1px #65A603;
+    border-radius: 8px ;
+    background-color: #65A603;
+    width: 50%;
+    height: 3rem;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.buttonUsd{
+    border: solid 1px #65A603;
+    border-radius: 8px ;
+    background-color:#65A603;
+    width: 50%;
+    height: 3rem;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.buttonPending{
+    border: solid 3px #1466022c;
+    border-radius: 8px ;
+    width: 50%;
+    height: 3rem;
+    color: #278e05;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.textOfTheTotalToPay{
+    font-size: 2.5rem;
+    color: #0011ff;
+    margin-bottom: 1rem
+}
+.freeShippingText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 4rem;
+    background-color: #8df2a673;
+    color: #5a8d0d;
+    font-size: 1.3rem;
+}
+.paymentButtonContainer{
+    display: flex;
+    justify-content: right;
+    margin: 1rem;
+}
+.paymentButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 30%;
+    height: 3.5rem;
+    border: solid 1px #65A603  ;
+    border-radius: 30px;
+    background-color: #65A603;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.payButton:hover{
+    background-color: #5a9502;
+    transition: all 0.5s ease
+}
+
+.cartCardHeader{
+    display: flex;
+    justify-content: space-between;
+    color: #0011ff;
+    margin-bottom: 1rem;
+}
+.cartCardContent{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.cartCardLi{
+    display: grid;
+    grid-template-columns: auto 1fr 1fr auto;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+     "img details details options"
+     ;
+     gap: 1rem;
+    
+}
+.cartCardImg{
+    width: 5rem;
+    height: 4rem;
+}
+.imgDivContent{
+    display: flex;
+    align-items: center;
+    grid-area: img;
+}
+.productDetailsContainer{
+    grid-area: details;
+}
+.productOptionsContainer{
+    grid-area: options;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.cartProductName{
+    color: black;
+}
+
+.shippingDetailText{
+    color: rgb(253, 0, 0);
+}
+.cartProductPrice{
+    color: rgb(8, 0, 255);
+    font-size: 1.3rem;
+}
+.productQuantityContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    gap: 5px;
+}
+
+.quantityText{
+    font-size: 0.7rem;
+    color: #0011ff;
+}
+.quantityContainer{
+    border: solid 1px #D9D9D9;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.optionsContainer{
+    display: flex;
+    gap: 1px;
+    width: auto;
+    border: 1px solid rgba(128, 128, 128, 0.526);
+    border-radius: 20px;
+}
+.optionsContainer:hover{
+    border-radius: 30px;
+    background-color: rgb(9, 128, 0);
+    color: white;
+    cursor: pointer;
+}
+.deleteText{
+    border: none;
+    height: 14px;
+    font-size: 13px;
+}
+.addButton{
+    border:solid 1px #65A603;
+    border-radius: 5px;
+    color: white;
+    background-color: #65A603;
+    margin-right: 2px;
+    cursor: pointer;
+}
+.decreaseButton{
+    border:solid 1px #d70303;
+    border-radius: 5px;
+    color: white;
+    background-color: #d70303;
+    cursor: pointer;
+}
+.emptyCartButton{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+
