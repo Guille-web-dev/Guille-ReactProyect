@@ -27,19 +27,22 @@
 .inputDateForm > p{
   border-top:solid 1px rgb(218, 217, 217);
   border-bottom:solid 1px rgb(218, 217, 217);
-  color: rgb(106, 105, 105);
+  color: rgba(106, 105, 105, 0.785);
+  font-size: 1.3rem;
 }
 .monthForm{
   padding: 5px;
-  width: 1.8rem;
+  width: 3.2rem;
   border-right: none;
   border-radius:3px 0 0 3px ; 
+  color:rgba(106, 105, 105, 0.785) ;
 }
 .yearForm{
-  padding: 5px;
-  width: 1.4rem;
+  text-align: center;
+  width: 3.2rem;
   border-left: none;
   border-radius:0px 3px 3px 0; 
+  color: (106, 105, 105, 0.785) ;
 }
 
 .cvcForm{

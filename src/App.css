@@ -14,12 +14,6 @@ body {
   padding: 0.5rem;
   gap: 2rem;
 }
-
-.img {
-  width: 17rem;
-  height: 12rem;
-}
-
 .contenedor {
   display: flex;
   flex-wrap: wrap;
@@ -43,62 +37,19 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.li {
-  list-style: none;
-}
-.ul {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
 
 h1 {
   margin: 0;
 }
 
-.link {
-  text-decoration: none;
-  transition: ease 0.5s;
-  color: white;
-  font-size: 1.5rem;
-}
-.link:hover {
-  color: rgb(38, 212, 38);
-}
-.footer {
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  margin: 0;
-  background-color: #06062a;
-  color: white;
-}
-.header {
-  background-color: #06062a;
+/* ESTILO DE PRODUCTOS EN STOCK */
+.imgProducts-stock{
+  width: 15rem;
+  height: 10rem;
 }
 .precio {
   color: #006cf8;
   font-weight: bold;
-}
-.logo {
-  width: 15rem;
-  height: 15rem;
-}
-.contenedorLogo {
-  display: flex;
-  align-items: center;
-  height: 7rem;
-}
-.navBar {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  color: white;
-}
-nav {
-  display: flex;
-  align-items: center;
 }
 .linkCard {
   text-decoration: none;

@@ -10,6 +10,9 @@ const initialForm = {
   year: "",
   cvc: "",
   identificationDocument:"",
+  city:"",
+  state:"",
+  address:"",
 };
 
 function PaymentForm() {

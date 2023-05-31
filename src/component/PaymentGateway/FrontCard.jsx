@@ -25,7 +25,7 @@ function FrontCard({ data }) {
       </div>
       <div className="detailsCardFront">
         <div className="cardNumber-container">
-          <p>{numberData || "0000 0000 0000 0000"}</p>
+          <p>{numberData.replace(/(.{4})/g, "$1 ") || "0000 0000 0000 0000"}</p>
         </div>
         <div className="nameData">
           <p>{nameData || "Full name"}</p>
