@@ -2,7 +2,8 @@ import BackCard from "./BackCard";
 import FrontCard from "./FrontCard";
 
 function BankCard({ form }) {
-  const { cvc } = form;
+
+  const { cvc } = form || {};
 
   return (
     <div className="cardContainer">

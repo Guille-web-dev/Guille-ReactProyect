@@ -17,11 +17,11 @@ const initialForm = {
 
 function PaymentForm() {
   const [form, setForm] = useState(initialForm);
-
+  document.title = "GuilleDev - pasarela de pago";
   return (
     <div className="paymentForm">
       <div className="paymentFormContent-container">
-        <PaymentFormContent form ={form} setForm={setForm}/>
+        <PaymentFormContent form ={form} setForm={setForm} initialForm={initialForm}/>
       </div>
       <div className="bankCardContainer">
         <BankCard form ={form}/>

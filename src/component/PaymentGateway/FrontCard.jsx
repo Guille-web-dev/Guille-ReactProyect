@@ -9,12 +9,12 @@ function FrontCard({ data }) {
   const [yearData, setYearData] = useState(year);
 
   useEffect(() => {
-    cartNumber[0] === ""
+    cartNumber.length === 0
       ? setNumberData("0000 0000 0000 0000")
-      : setNumberData(cartNumber);
-    name[0] === "" ? setNameData("Full name") : setNameData(name);
-    month[0] === "" ? setMonthData("MM") : setMonthData(month);
-    year[0] === "" ? setYearData("YY") : setYearData(year);
+      : setNumberData(cartNumber.replace(/(.{4})/g, "$1 "));
+    name.length === 0 ? setNameData("FULL NAME") : setNameData(name);
+    month.length === 0 ? setMonthData("MM") : setMonthData(month);
+    year.length === 0 ? setYearData("YY") : setYearData(year);
   }, [cartNumber, name, month, year]);
 
   return (
@@ -25,12 +25,12 @@ function FrontCard({ data }) {
       </div>
       <div className="detailsCardFront">
         <div className="cardNumber-container">
-          <p>{numberData.replace(/(.{4})/g, "$1 ") || "0000 0000 0000 0000"}</p>
+          <p>{numberData}</p>
         </div>
         <div className="nameData">
-          <p>{nameData || "Full name"}</p>
+          <p>{nameData}</p>
           <div className="cardFrontData">
-            {monthData || "MM"}/{yearData || "YY"}
+            {monthData}/{yearData}
           </div>
         </div>
       </div>

@@ -6,12 +6,12 @@ import "./CartStyles.css";
 function ProductsInCart({cartItem}) {
  
   return (
-    <div className="cartContainerParent">
-      <div className="mainContainerCart">
+    <div className="contentCart">
+      <div className="containerCartMain">
         <div>
           <ProductsInCartHeader />
         </div>
-        <div>
+        <div className="containerCartCards">
           {cartItem.map((product) => (
             <CartCards product={product} key={product.id} />
           ))}

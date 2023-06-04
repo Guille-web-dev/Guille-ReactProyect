@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./component/header-footer/NavBar";
-import Home from "./component/Home";
 import Footer from "./component/header-footer/Footer";
 import Provider from "./component/provider";
 import ProductDetails from "./component/ProductDetails/ProductDetails";
@@ -11,12 +10,11 @@ import PaymentGateway from "./component/PaymentGateway/PaymenGateway";
 
 function App() {
   return (
-    <div className="padre">
+    <div className="containerGeneral">
       <Provider>
         <BrowserRouter>        
             <NavBar />
             <Routes>
-              <Route path="/" element={<Home />} />
               <Route path="/productos" element={<Products/>} />
               <Route path="/carrito" element={<Cart/>} />
               <Route path="/productos/:id" element={<ProductDetails />} />

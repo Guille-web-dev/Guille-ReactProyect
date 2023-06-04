@@ -6,9 +6,9 @@ function Footer() {
   return (
     <footer className="footer">
       <nav >
-        <ul className="ul">
+        <ul className="ulFooter">
           <li className="li">
-            <Link to="/" className="link">Home</Link>
+            <Link to="/Carrito" className="link">Carrito</Link>
           </li>
           <li className="li">
             <Link to="/productos" className="link">Productos</Link>

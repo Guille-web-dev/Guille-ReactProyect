@@ -1,10 +1,16 @@
+import { useContext, useEffect } from "react";
 import { useForm } from "../hooks/useForm";
+import { context } from "../provider";
 
-function PaymentFormContent({ form, setForm }) {
-  const { handleChange, handleSubmit, handleBlur, error } = useForm(
+function PaymentFormContent({ form, setForm, initialForm }) {
+  const { setCartItem } = useContext(context);
+  const { handleChange, handleBlur, handleSubmit,handleOnKeyDownLetter,handleOnKeyDownNumber, isChecked, error } = useForm(
     form,
-    setForm
+    setForm,
+    initialForm,
+    setCartItem
   );
+
   const {
     cvc,
     cartNumber,
@@ -18,10 +24,10 @@ function PaymentFormContent({ form, setForm }) {
   } = form;
 
   const arrayMonth = Array.from({ length: 12 }, (_, index) => index + 1);
-  
+
   return (
     <div className="formContainer">
-      <form className="row g-3" onSubmit={handleSubmit}>
+      <form className="row g-3" onSubmit={(e) => handleSubmit(e)}>
         <div className="col-md-6">
           <label htmlFor="inputName4" className="form-label">
             Nombre
@@ -29,6 +35,7 @@ function PaymentFormContent({ form, setForm }) {
           <input
             onChange={(e) => handleChange(e)}
             onBlur={(e) => handleBlur(e)}
+            onKeyDown={(e) => handleOnKeyDownNumber(e)}
             name="name"
             value={name}
             type="text"
@@ -36,24 +43,25 @@ function PaymentFormContent({ form, setForm }) {
             id="inputName4"
             required
           />
-          {error.name && <p>{error.name}</p>}
+          {error.name && <p className="errorText">{error.name}</p>}
         </div>
         <div className="col-md-6">
           <label htmlFor="inputID" className="form-label">
-            Documento de identificacion
+            C.I
           </label>
           <input
-            type="text"
-            name="identificationDocument"
             onChange={(e) => handleChange(e)}
             onBlur={(e) => handleBlur(e)}
+            onKeyDown={(e) => handleOnKeyDownLetter(e)}
+            name="identificationDocument"
             value={identificationDocument}
+            type="text"
             className="form-control"
             id="inputID"
             required
           />
           {error.identificationDocument && (
-            <p>{error.identificationDocument}</p>
+            <p className="errorText">{error.identificationDocument}</p>
           )}
         </div>
         <div className="col-12">
@@ -77,6 +85,7 @@ function PaymentFormContent({ form, setForm }) {
           <input
             onChange={(e) => handleChange(e)}
             onBlur={(e) => handleBlur(e)}
+            onKeyDown={(e) => handleOnKeyDownNumber(e)}
             type="text"
             name="city"
             value={city}
@@ -84,7 +93,7 @@ function PaymentFormContent({ form, setForm }) {
             id="inputCity"
             required
           />
-          {error.city && <p>{error.city}</p>}
+          {error.city && <p className="errorText">{error.city}</p>}
         </div>
         <div className="col-md-6">
           <label htmlFor="inputState" className="form-label">
@@ -93,6 +102,7 @@ function PaymentFormContent({ form, setForm }) {
           <input
             onChange={(e) => handleChange(e)}
             onBlur={(e) => handleBlur(e)}
+            onKeyDown={(e) => handleOnKeyDownNumber(e)}
             name="state"
             value={state}
             type="text"
@@ -100,7 +110,7 @@ function PaymentFormContent({ form, setForm }) {
             id="inputState"
             required
           />
-          {error.state && <p>{error.state}</p>}
+          {error.state && <p className="errorText">{error.state}</p>}
         </div>
         <div className="col-12">
           <label htmlFor="inputCardNumber" className="form-label">
@@ -109,6 +119,7 @@ function PaymentFormContent({ form, setForm }) {
           <input
             onChange={(e) => handleChange(e)}
             onBlur={(e) => handleBlur(e)}
+            onKeyDown={(e) => handleOnKeyDownLetter(e)}
             name="cartNumber"
             value={cartNumber}
             type="text"
@@ -118,47 +129,54 @@ function PaymentFormContent({ form, setForm }) {
             maxLength={16}
             required
           />
-          {error.cartNumber && <p>{error.cartNumber}</p>}
+          {error.cartNumber && <p className="errorText">{error.cartNumber}</p>}
         </div>
-        <div className="row col-12 dateForm">
+        <div className="dateForm">
           <div className="col-md-6">
-            <label htmlFor="inputMonth" className="form-label">
-              EXP
-            </label>
-            <div className="inputDateForm col-md-6">
-              <label htmlFor="inputMonth"></label>
-              <input
-                onChange={(e) => handleChange(e)}
-                onBlur={(e) => handleBlur(e)}
-                value={month}
-                name="month"
-                className="form-control monthForm"
-                list="datalistOptions"
-                id="inputMonth"
-                placeholder="MM"
-                maxLength={2}
-                required
-              />
-              <datalist id="datalistOptions">
-                {arrayMonth.map((el) => (
-                  <option key={el} value={el} />
-                ))}
-              </datalist>
-              <p>/</p>
-              <input
-                onChange={(e) => handleChange(e)}
-                onBlur={(e) => handleBlur(e)}
-                name="year"
-                value={year}
-                type="text"
-                className="form-control yearForm"
-                id="inputYear"
-                placeholder="YY"
-                maxLength={2}
-                required
-              />
+            <div className="inputDateForm">
+              <div>
+                <label htmlFor="inputMonth" className="form-label">
+                  MES
+                </label>
+                <input
+                  onChange={(e) => handleChange(e)}
+                  onBlur={(e) => handleBlur(e)}
+                  onKeyDown={(e) => handleOnKeyDownLetter(e)}
+                  value={month}
+                  name="month"
+                  className="form-control monthForm"
+                  list="datalistOptions"
+                  id="inputMonth"
+                  placeholder="MM"
+                  maxLength={2}
+                  required
+                />
+                <datalist id="datalistOptions">
+                  {arrayMonth.map((el) => (
+                    <option key={el} value={el} />
+                  ))}
+                </datalist>
+              </div>
+              <div>
+                <label htmlFor="inputMonth" className="form-label">
+                  AÑO
+                </label>
+                <input
+                  onChange={(e) => handleChange(e)}
+                  onBlur={(e) => handleBlur(e)}
+                  onKeyDown={(e) => handleOnKeyDownLetter(e)}
+                  name="year"
+                  value={year}
+                  type="text"
+                  className="form-control yearForm"
+                  id="inputYear"
+                  placeholder="YY"
+                  maxLength={2}
+                  required
+                />
+              </div>
+              <p className="errorText">{error.year || error.month}</p>
             </div>
-            <p>{error.year || error.month}</p>
           </div>
           <div className="col-md-6">
             <label htmlFor="inputCVC" className="form-label">
@@ -167,6 +185,7 @@ function PaymentFormContent({ form, setForm }) {
             <input
               onChange={(e) => handleChange(e)}
               onBlur={(e) => handleBlur(e)}
+              onKeyDown={(e) => handleOnKeyDownLetter(e)}
               name="cvc"
               value={cvc}
               type="text"
@@ -176,7 +195,7 @@ function PaymentFormContent({ form, setForm }) {
               maxLength={3}
               required
             />
-            {error.cvc && <p>{error.cvc}</p>}
+          {error.cvc && <p className="errorText">{error.cvc}</p>}
           </div>
         </div>
         <div className="col-12">
@@ -185,6 +204,7 @@ function PaymentFormContent({ form, setForm }) {
               className="form-check-input"
               type="checkbox"
               id="gridCheck"
+              onChange={(e) => handleChange(e)}
               required
             />
             <label className="form-check-label" htmlFor="gridCheck">

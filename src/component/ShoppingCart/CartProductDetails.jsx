@@ -7,7 +7,7 @@ function CartProductDetails({ product }) {
   const { img, precio, cantidad, nombre, id } = product;
 
   return (
-    <ul>
+    <ul className="ulProductsInCart">
       <li className="cartCardLi">
         <Link to={`/productos/${id}`} className="linkCard imgDivContainer">
           <img className="cartCardImg" src={img} alt={nombre} />

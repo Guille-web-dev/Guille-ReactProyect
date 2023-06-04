@@ -1,240 +1,403 @@
-
-.cartContainerParent{
-    display: flex;
-    justify-content: center;
-    
+.containerCart{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.componentEmptyCart{
-    text-align: center;
+.contentCart {
+  display: flex;
+  gap: 1rem;
+}
+.componentEmptyCart {
+  text-align: center;
 }
 .componentEmptyCart > h2 {
-    color: #0011ff;
+  color: #0011ff;
 }
-.mainContainerCart{
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-    padding: 1rem;
-    border: solid 1px #D9D9D9;
-    border-radius: 20px;
-    width: 60%;
+.containerCartMain {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  padding-top: 2rem;
+  border: solid 1px #d9d9d9;
+  border-radius: 20px;
+  width: 60%;
 }
-.totalToPay{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
-    margin: 1rem;
-    border: solid 1px #D9D9D9;
-    border-radius: 20px;
+.totalToPay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  margin: 1rem;
+  border: solid 1px #d9d9d9;
+  border-radius: 20px;
 }
-.totalPayInfoContainer{
-    width: 100%;
+.totalPayInfoContainer {
+  width: 100%;
 }
 
 .totalPayInfoContainer > p {
-    color: blue;
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin: 1rem;
-    margin-top: 2.5rem;
+  color: blue;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 1rem;
+  margin-top: 2.5rem;
 }
-.paymentTypeDetails{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 3rem;
+.paymentTypeDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
 }
 .paymentTypeDetails > p {
-    color: #0011ff;
-    font-size: 1.2rem;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+  color: #0011ff;
+  font-size: 1.2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.paymentButtonsContainer{
+.paymentButtonsContainer {
+  width: 90%;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem;
+}
+.buttonPesos {
+  border: solid 1px #65a603;
+  border-radius: 8px;
+  background-color: #65a603;
+  width: 50%;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+.buttonUsd {
+  border: solid 1px #65a603;
+  border-radius: 8px;
+  background-color: #65a603;
+  width: 50%;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+.buttonPending {
+  border: solid 3px #1466022c;
+  border-radius: 8px;
+  width: 50%;
+  height: 3rem;
+  color: #278e05;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+.textOfTheTotalToPay {
+  font-size: 2.5rem;
+  color: #0011ff;
+  margin-bottom: 1rem;
+}
+.freeShippingText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 4rem;
+  background-color: #8df2a673;
+  color: #5a8d0d;
+  font-size: 1.3rem;
+}
+.paymentButtonContainer {
+  display: flex;
+  justify-content: right;
+  margin: 1rem;
+}
+.paymentButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 30%;
+  height: 3.5rem;
+  border: solid 1px #65a603;
+  border-radius: 30px;
+  background-color: #65a603;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.payButton:hover {
+  background-color: #5a9502;
+  transition: all 0.5s ease;
+}
+
+.cartCardHeader {
+  display: flex;
+  justify-content: space-between;
+  color: #0011ff;
+  margin-bottom: 1rem;
+}
+.containerCartCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.ulProductsInCart {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cartCardLi {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr auto;
+  grid-template-rows: 1fr;
+  grid-template-areas: "img details details options";
+  gap: 1rem;
+}
+.cartCardImg {
+  width: 5rem;
+  height: 4rem;
+}
+.imgDivContent {
+  display: flex;
+  align-items: center;
+  grid-area: img;
+}
+.productDetailsContainer {
+  grid-area: details;
+}
+.productOptionsContainer {
+  grid-area: options;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.cartProductName {
+  color: black;
+}
+
+.shippingDetailText {
+  color: rgb(253, 0, 0);
+}
+.cartProductPrice {
+  color: rgb(8, 0, 255);
+  font-size: 1.3rem;
+}
+.productQuantityContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  gap: 5px;
+}
+
+.quantityText {
+  font-size: 0.7rem;
+  color: #0011ff;
+}
+.quantityContainer {
+  border: solid 1px #d9d9d9;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+}
+.optionsContainer {
+  display: flex;
+  gap: 1px;
+  width: auto;
+  border: 1px solid rgba(128, 128, 128, 0.526);
+  border-radius: 20px;
+}
+.optionsContainer:hover {
+  border-radius: 30px;
+  background-color: rgb(9, 128, 0);
+  color: white;
+  cursor: pointer;
+}
+.deleteText {
+  border: none;
+  height: 14px;
+  font-size: 13px;
+}
+.addButton {
+  border: solid 1px #65a603;
+  border-radius: 5px;
+  color: white;
+  background-color: #65a603;
+  margin-right: 2px;
+  cursor: pointer;
+}
+.decreaseButton {
+  border: solid 1px #d70303;
+  border-radius: 5px;
+  color: white;
+  background-color: #d70303;
+  cursor: pointer;
+}
+.emptyCartButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+/* MEDIA QUERY */
+
+@media (max-width: 719px) {
+  .contentCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .containerCartMain {
     width: 90%;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin: 1rem;
-}
-.buttonPesos{
-    border: solid 1px #65A603;
-    border-radius: 8px ;
-    background-color: #65A603;
-    width: 50%;
-    height: 3rem;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    font-weight: bold;
-}
-.buttonUsd{
-    border: solid 1px #65A603;
-    border-radius: 8px ;
-    background-color:#65A603;
-    width: 50%;
-    height: 3rem;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    font-weight: bold;
-}
-.buttonPending{
-    border: solid 3px #1466022c;
-    border-radius: 8px ;
-    width: 50%;
-    height: 3rem;
-    color: #278e05;
-    font-size: 1.2rem;
-    cursor: pointer;
-    font-weight: bold;
-}
-.textOfTheTotalToPay{
-    font-size: 2.5rem;
-    color: #0011ff;
-    margin-bottom: 1rem
-}
-.freeShippingText{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 4rem;
-    background-color: #8df2a673;
-    color: #5a8d0d;
-    font-size: 1.3rem;
-}
-.paymentButtonContainer{
-    display: flex;
-    justify-content: right;
-    margin: 1rem;
-}
-.paymentButton{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    width: 30%;
-    height: 3.5rem;
-    border: solid 1px #65A603  ;
-    border-radius: 30px;
-    background-color: #65A603;
-    color: white;
-    cursor: pointer;
-    font-size: 1.2rem;
-}
-.payButton:hover{
-    background-color: #5a9502;
-    transition: all 0.5s ease
-}
-
-.cartCardHeader{
-    display: flex;
-    justify-content: space-between;
-    color: #0011ff;
-    margin-bottom: 1rem;
-}
-.cartCardContent{
-    display: flex;
+    gap: 2rem;
+  }
+  .containerCartCards {
+    gap: 2rem;
+  }
+  .cartCardHeader {
     flex-direction: column;
-    width: 100%;
-}
-.cartCardLi{
+  }
+
+  .cartCardLi {
     display: grid;
-    grid-template-columns: auto 1fr 1fr auto;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
-     "img details details options"
-     ;
-     gap: 1rem;
-    
-}
-.cartCardImg{
-    width: 5rem;
-    height: 4rem;
-}
-.imgDivContent{
+      "img options"
+      " details options";
+    gap: 0.5rem;
+  }
+  .shippingDetailText {
+    font-size: 0.8rem;
+  }
+  .productOptionsContainer {
+    flex-direction: column;
+  }
+  .productQuantityContainer {
+    width: 100%;
+  }
+  .addDecreaseButtonContainer {
     display: flex;
-    align-items: center;
-    grid-area: img;
+  }
+
+  /* CONTENEDOR DE TOTAL A PAGAR */
+
+  .totalToPay {
+    width: 90%;
+    margin-top: 0;
+  }
+  .paymentTypeDetails {
+    margin-top: 0.5rem;
+  }
+  .paymentTypeDetails > p {
+    text-align: center;
+  }
+  .buttonPesos {
+    height: 3rem;
+    font-size: 0.9rem;
+  }
+  .buttonPending {
+    height: 3rem;
+    font-size: 0.9rem;
+  }
+  .paymentButton {
+    width: 40%;
+  }
 }
-.productDetailsContainer{
-    grid-area: details;
+@media (min-width:350px) and (max-width: 480px){
+    .buttonPesos {
+        height: 3rem;
+        font-size: 1rem;
+      }
+      .buttonPending {
+        height: 3rem;
+        font-size: 1rem;
+      }
+      .paymentButton {
+        width: 30%;
+      }
 }
-.productOptionsContainer{
-    grid-area: options;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-.cartProductName{
-    color: black;
+@media (min-width:481px) and (max-width: 719px){
+    .buttonPesos {
+        height: 3rem;
+        font-size: 1.2rem;
+        width: 43%;
+      }
+      .buttonPending {
+        height: 3rem;
+        font-size: 1.2rem;
+        width: 43%;
+      }
+      .paymentButton {
+        width: 30%;
+      }
 }
 
-.shippingDetailText{
-    color: rgb(253, 0, 0);
-}
-.cartProductPrice{
-    color: rgb(8, 0, 255);
-    font-size: 1.3rem;
-}
-.productQuantityContainer{
+@media (min-width: 720px) and (max-width: 900px) {
+  .contentCart {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
-    gap: 5px;
-}
-
-.quantityText{
-    font-size: 0.7rem;
-    color: #0011ff;
-}
-.quantityContainer{
-    border: solid 1px #D9D9D9;
-    border-radius: 5px;
+  }
+  .containerCartMain {
+    width: 90%;
+    height: 90%;
+    margin: 0;
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+  .containerCartCards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "cartCardLi cartCardLi"
+    "cartCardLi cartCardLi";
+  }
+  .cartCardLi{
     width: 100%;
+    grid-area: cartCardLi;
+  }
+  .cartCardHeader {
+    flex-direction: column;
+  }
+  .shippingDetailText {
+    font-size: 0.8rem;
+  }
+  .productOptionsContainer {
+    flex-direction: column;
+  }
+  .productQuantityContainer {
+    width: 100%;
+  }
+  .addDecreaseButtonContainer {
+    display: flex;
+  }
+
+   /* CONTENEDOR DE TOTAL A PAGAR */
+   .totalToPay {
+    width: 90%;
+    align-self: center;
+    margin-bottom: 2rem;
+  }
+  .paymentTypeDetails {
+    margin-top: 0.5rem;
+  }
+  .paymentTypeDetails > p {
     text-align: center;
-    font-size: 1.3rem;
+  }
+  .buttonPesos {
+    height: 3rem;
+    width: 35%;
+  }
+  .buttonPending {
+    height: 3rem;
+    width: 35%;
+  }
+  .paymentButton {
+    width: 20%;
+  }
 }
-.optionsContainer{
-    display: flex;
-    gap: 1px;
-    width: auto;
-    border: 1px solid rgba(128, 128, 128, 0.526);
-    border-radius: 20px;
-}
-.optionsContainer:hover{
-    border-radius: 30px;
-    background-color: rgb(9, 128, 0);
-    color: white;
-    cursor: pointer;
-}
-.deleteText{
-    border: none;
-    height: 14px;
-    font-size: 13px;
-}
-.addButton{
-    border:solid 1px #65A603;
-    border-radius: 5px;
-    color: white;
-    background-color: #65A603;
-    margin-right: 2px;
-    cursor: pointer;
-}
-.decreaseButton{
-    border:solid 1px #d70303;
-    border-radius: 5px;
-    color: white;
-    background-color: #d70303;
-    cursor: pointer;
-}
-.emptyCartButton{
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    cursor: pointer;
-}
-
-

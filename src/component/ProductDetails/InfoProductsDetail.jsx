@@ -1,16 +1,14 @@
-import { addDoc, collection } from "firebase/firestore";
-import { db } from "../../config/firebase";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { context } from "../provider";
+import { Link } from "react-router-dom";
 
 function InfoProductsDetails({ product }) {
-  
-  const { nombre, precio, cantidad, stock, id } = product;
-  const { addToCart } = useContext(context)
+  const { nombre, precio, cantidad } = product;
+  const { addToCart,pay } = useContext(context);
 
   return (
-    <div className="contenedorDetailsPageInfo">
-      <div className="textCard">
+    <div className="containerDetailsPageInfo">
+      <div className="textPageDetails">
         <p className="nameDetailsPage">{nombre.toUpperCase()}</p>
         <p className="quantityDetailsPage">{cantidad} UND</p>
         <p className="priceDetailsPage">${precio}</p>
@@ -19,10 +17,17 @@ function InfoProductsDetails({ product }) {
         <input
           onClick={() => addToCart(product)}
           type="button"
-          className="buttonAgregar"
+          className="buttonAdd"
           value="Agregar al carrito"
         />
-        <input type="button" className="buttonComprar" value="Comprar ahora" />
+        <Link to="/Carrito" className="link">
+          <input
+            type="button"
+            className="buttonBuy"
+            value="Comprar ahora"
+            onClick={() => pay(product)}
+          />
+        </Link>
       </div>
     </div>
   );

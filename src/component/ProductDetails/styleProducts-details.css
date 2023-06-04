@@ -1,0 +1,117 @@
+
+.contenedorInfoProducto{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .containerImg{
+    width: 50%;
+  }
+  
+  .imgPageDetails{
+    width: 100%;
+    height: 20rem;
+    border: solid 1px #D9D9D9;
+    border-radius: 25px;
+  }
+  .containerProductsDetailsInfo{
+    width: 35%;
+  }
+  .containerDetailsPageInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .textPageDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .nameDetailsPage{
+    color: #65A603;
+    font-size: 2rem;
+  }
+  .quantityDetailsPage{
+    color: #a4a3a3;
+    font-size: 1.5rem;
+  }
+  .priceDetailsPage{
+    font-size: 3rem;
+  }
+  .buttonContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    
+  }
+  .buttonAdd{
+    border: solid 1px rgba(128, 128, 128, 0.45);
+    border-radius: 15px;  
+    height: 2rem;
+    background-color: #65A603;
+    color: white;
+    font-size: 1.2rem;
+    width: 90%;
+  }
+  .buttonBuy{
+    border: solid 1px rgba(128, 128, 128, 0.45);
+    border-radius: 15px;  
+    height: 2rem;
+    background-color: #65A603;
+    color: white;
+    font-size: 1.2rem;
+    width: 90%;
+  }
+  .buttonApp:hover{
+    background-color: #3c6105;
+    cursor: pointer;
+  }
+  .buttonBuy:hover{
+    background-color: #3c6105;
+    cursor: pointer;
+  }
+  
+  @media (max-width:780px){
+    .contenedorInfoProducto{
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .containerImg{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .imgPageDetails{
+      height: 17rem;
+      width: 80%;
+    }
+    .containerProductsDetailsInfo{
+      width: 100%;
+    }
+    .textPageDetails{
+      gap: 0;
+    }
+    .nameDetailsPage{
+      font-size: 1.5rem;
+    }
+    .quantityDetailsPage{
+      color: #a4a3a3;
+      font-size: 1rem;
+    }
+    .priceDetailsPage{
+      font-size: 1.5rem;
+    }
+    .buttonAdd{
+      align-self: center;
+    }
+    .buttonBuy{
+      align-self: center;
+    }
+    
+  }
+ 
+  
