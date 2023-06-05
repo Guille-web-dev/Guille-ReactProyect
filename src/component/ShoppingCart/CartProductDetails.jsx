@@ -8,7 +8,7 @@ function CartProductDetails({ product }) {
   const {addToCart,decreaseItemQuantity,deleteItem} = useContext(context)
   
   const { img, price, quantity, name, id } = product;
-
+  console.log(name)
   return (
     <ul className="ulProductsInCart">
       <li className="cartCardLi">

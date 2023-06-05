@@ -1,0 +1,14 @@
+.containerTextError{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+.containerTextError h2 {
+    font-size: 3rem;
+}
+.containerTextError p {
+    font-size: 2rem;
+}
