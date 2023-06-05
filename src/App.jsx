@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import NavBar from "./component/header-footer/NavBar";
 import Footer from "./component/header-footer/Footer";
 import Provider from "./component/provider";
@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="containerGeneral">
       <Provider>
-        <BrowserRouter>        
+        <HashRouter>        
             <NavBar />
             <Routes>
               <Route path="/" element={<Products/>} />
@@ -21,7 +21,7 @@ function App() {
               <Route path="/Pago" element={<PaymentGateway/>} />
             </Routes>
             <Footer />
-        </BrowserRouter>
+        </HashRouter>
       </Provider>
     </div>
   );
