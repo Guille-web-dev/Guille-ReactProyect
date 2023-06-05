@@ -1,24 +1,25 @@
-import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { context } from "../provider";
 import ImgProductsDetails from "./ImgProductsDetails";
 import InfoProductsDetails from "./InfoProductsDetail";
+import { ProductsInArray } from "../arrayProducts/ProductsInArray";
 import "./styleProducts-details.css"
 
 function ProductDetails() {
   document.title = "Detalles de producto"
-  const { productos } = useContext(context);
-  const productoId = useParams();
-  const newProducto = productos.find((el) => el.id === productoId.id);
+  
+  const {id} = useParams();
+  const productId = parseInt(id)
+  const newProducto = ProductsInArray.find((el) => el.id === productId);
+ 
   if (!newProducto) {
     return <h1>cargando</h1>;
   }
-  const { img, precio, cantidad, stock, nombre } = newProducto;
+  const { img, name } = newProducto;
 
   return (
       <div className="contenedorInfoProducto">
         <div className="containerImg">
-            <ImgProductsDetails img={img} nombre={nombre} />
+            <ImgProductsDetails img={img} nombre={name} />
         </div>
         <div className="containerProductsDetailsInfo">
           <InfoProductsDetails

@@ -31,12 +31,8 @@ function TotalToPay() {
       </div>
       <Link to="/Pago" className="paymentButtonContainer link">
         <button className="paymentButton">
-          Pagar{" "}
-          <img
-            className="bi"
-            src="../src/assets/arrow-right-circle.svg"
-            alt="pagar"
-          />
+          Pagar
+          <img src="arrow-right-circle.svg" alt="flecha" />
         </button>
       </Link>
     </div>

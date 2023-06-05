@@ -1,9 +1,10 @@
-function ImgProductsDetails({img,nombre}) {
-    return ( 
-        <>
-          <img className="imgPageDetails" src={img} alt={nombre} />
-        </>
-     );
+function ImgProductsDetails({ img, name }) {
+  
+  return (
+    <>
+      <img className="imgPageDetails" src={img} alt={name} />
+    </>
+  );
 }
 
 export default ImgProductsDetails;

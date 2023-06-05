@@ -2,12 +2,13 @@ import { useContext } from "react";
 import "./style-header-footer.css";
 import { Link } from "react-router-dom";
 import { context } from "../provider";
+import logoCarrito from "../../../public/cart3.svg";
 function NavBar() {
   const { cartItem } = useContext(context);
   return (
     <header className="header">
       <div className="containerNavbar">
-        <Link to="/Productos" className="logoPage">
+        <Link to="/" className="logoPage">
           GuilleDev
         </Link>
         <nav className="navbar navbar-expand-lg navbar-light  containerNav">
@@ -28,7 +29,7 @@ function NavBar() {
           >
             <ul className=" navbar-nav-scroll ulHeader">
               <li className="nav-item">
-                <Link to="/productos" className="link">
+                <Link to="/" className="link">
                   Productos
                 </Link>
               </li>
@@ -38,7 +39,7 @@ function NavBar() {
         </nav>
         <div className="containerLogo-cart">
           <Link to="/Carrito" className="link">
-            <img className="logoCart" src="../src/assets/cart3.svg" alt="" />
+            <img className="logoCart" src={logoCarrito} alt="" />
           </Link>
           <div className="quantityLogo-cart">{cartItem.length}</div>
         </div>

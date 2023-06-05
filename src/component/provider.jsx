@@ -23,7 +23,7 @@ function Provider({ children }) {
     let searchProduct = cartItem.find((el) => el.id === product.id);
     if (searchProduct) {
       let newCartArray = cartItem.map((el) =>
-        el.id === product.id ? { ...el, cantidad: el.cantidad + 1 } : el
+        el.id === product.id ? { ...el, quantity: el.quantity + 1 } : el
       );
       localStorage.setItem("newProducts", JSON.stringify(newCartArray));
       recoveredProduct = JSON.parse(localStorage.getItem("newProducts"));
@@ -56,9 +56,9 @@ function Provider({ children }) {
   // FUNCION PARA BOTON DE DISMINUIR CANTIDAD DE UN PRODUCTO
   const decreaseItemQuantity = (product) => {
     let searchProduct = cartItem.find((el) => el.id === product.id);
-    if (searchProduct.cantidad > 1) {
+    if (searchProduct.quatity > 1) {
       let newCartArray = cartItem.map((el) =>
-        el.id === product.id ? { ...el, cantidad: el.cantidad - 1 } : el
+        el.id === product.id ? { ...el, quantity: el.quantity - 1 } : el
       );
       localStorage.setItem("newProducts", JSON.stringify(newCartArray));
       recoveredProduct = JSON.parse(localStorage.getItem("newProducts"));
@@ -104,7 +104,7 @@ function Provider({ children }) {
   //EFECTO PARA MANEJAR EL MONTO FINAL DE COMPRA
   useEffect(() => {
     const totalAmount = cartItem.reduce(
-      (accumulator, item) => accumulator + item.cantidad * item.precio,
+      (accumulator, item) => accumulator + item.quantity * item.price,
       0
     );
     setTotalPay(totalAmount);

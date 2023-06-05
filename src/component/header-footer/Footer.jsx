@@ -11,7 +11,7 @@ function Footer() {
             <Link to="/Carrito" className="link">Carrito</Link>
           </li>
           <li className="li">
-            <Link to="/productos" className="link">Productos</Link>
+            <Link to="/" className="link">Productos</Link>
           </li>
         </ul>
       </nav>

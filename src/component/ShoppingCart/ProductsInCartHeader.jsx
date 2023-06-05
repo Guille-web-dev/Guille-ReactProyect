@@ -9,7 +9,7 @@ function ProductsInCartHeader() {
         <h2 className="titleHeader">Productos en carrito</h2>
       </div>
       <div onClick={emptyCart} className="emptyCartButton">
-        <div> <img src="../src/assets/trash3.svg" alt="carrito" /></div>
+        <div> <img src="/trash3.svg" alt="carrito" /></div>
         <p>Vaciar Carrito</p>
       </div>
     </div>

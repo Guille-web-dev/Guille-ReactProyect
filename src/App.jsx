@@ -15,7 +15,7 @@ function App() {
         <BrowserRouter>        
             <NavBar />
             <Routes>
-              <Route path="/productos" element={<Products/>} />
+              <Route path="/" element={<Products/>} />
               <Route path="/carrito" element={<Cart/>} />
               <Route path="/productos/:id" element={<ProductDetails />} />
               <Route path="/Pago" element={<PaymentGateway/>} />

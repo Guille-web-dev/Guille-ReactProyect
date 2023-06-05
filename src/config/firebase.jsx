@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAaegCkPgf9dtDI_hCpjUxbU172A7PiJmU",
-    authDomain: "dye-industrial.firebaseapp.com",
-    projectId: "dye-industrial",
-    storageBucket: "dye-industrial.appspot.com",
-    messagingSenderId: "853124588200",
-    appId: "1:853124588200:web:a1202f387870dd2bb2989d"
-  };
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID
+};
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
