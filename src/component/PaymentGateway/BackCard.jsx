@@ -2,8 +2,10 @@ import { useState,useEffect } from "react";
 
 function BackCard({cvc}) {
   
+  // ESTADO PARA IMPRIMIR EL CVC EN LA PARTE DE ATRAS DE LA TARJETA 
   const [cvcData, setCvcData] = useState(cvc);
  
+  // EFFECT PARA ACTUALIZAR CVC DE LA TARJETA
   useEffect(() => {
     cvc.length === 0 ? setCvcData("000") : setCvcData(cvc);
   }, [cvc]);

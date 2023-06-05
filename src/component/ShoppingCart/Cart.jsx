@@ -5,7 +5,10 @@ import { context } from "../provider";
 
 function Cart() {
   document.title = "GuilleDev - carrito";
+  
+  //EXTRAYENDO DEL CONTEXT ARRAY DE PRODUCTOS EN CARRITO  
   const { cartItem } = useContext(context);
+  
   return (
     <div className={cartItem.length === 0 ? "containerCart" : ""}>
       {cartItem.length === 0 ? (

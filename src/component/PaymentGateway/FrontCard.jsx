@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 function FrontCard({ data }) {
   const {cartNumber,name,month,year} = data;
 
+// ESTADOS PARA IMPRIMIR INFORMACION DEL USUARIO AL FRENTE DE LA TARJETA 
   const [numberData, setNumberData] = useState("0000 0000 0000 0000");
   const [nameData, setNameData] = useState(name);
   const [monthData, setMonthData] = useState(month);
   const [yearData, setYearData] = useState(year);
 
+// EFFECT PARA ACTUALIZAR INFORMACION DE USUARIO AL FRENTE DE LA TARJETA
   useEffect(() => {
     cartNumber.length === 0
       ? setNumberData("0000 0000 0000 0000")

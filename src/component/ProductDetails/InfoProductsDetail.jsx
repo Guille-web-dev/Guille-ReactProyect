@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 function InfoProductsDetails({ product }) {
   const { name, price, quantity } = product;
+
+  // EXTRAYENDO FUNCIONES DEL CONTEXT, PARA AGREGAR AL CARRITO Y PARA EL BOTON DE PAGAR 
   const { addToCart,pay } = useContext(context);
 
   return (
@@ -20,7 +22,7 @@ function InfoProductsDetails({ product }) {
           className="buttonAdd"
           value="Agregar al carrito"
         />
-        <Link to="/Carrito" className="link">
+        <Link to="/Carrito" className="link linkButtonAdd">
           <input
             type="button"
             className="buttonBuy"

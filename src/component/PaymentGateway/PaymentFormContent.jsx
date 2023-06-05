@@ -3,7 +3,10 @@ import { useForm } from "../hooks/useForm";
 import { context } from "../provider";
 
 function PaymentFormContent({ form, setForm, initialForm }) {
+  // FUNCION DE ACTUALIZACION DE PRODUCTOS EN CARRITO EN CONTEXT
   const { setCartItem } = useContext(context);
+
+  // HOOK PERSONALIZADO QUE CONTIENE FUNCIONES Y ESTADOS PARA LA GESTION DE FORMULARIO
   const { handleChange, handleBlur, handleSubmit,handleOnKeyDownLetter,handleOnKeyDownNumber, isChecked, error } = useForm(
     form,
     setForm,
@@ -23,6 +26,7 @@ function PaymentFormContent({ form, setForm, initialForm }) {
     address,
   } = form;
 
+  // ARRAY DE 12 NUMEROS PARA CREAR DE MANERA DINAMICA LAS OPTIONS DEL INPUT MONTH
   const arrayMonth = Array.from({ length: 12 }, (_, index) => index + 1);
 
   return (

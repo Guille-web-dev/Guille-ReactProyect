@@ -3,6 +3,8 @@ import { context } from "../provider";
 import { Link } from "react-router-dom";
 
 function TotalToPay() {
+
+  // EXTRAYENDO DEL CONTEXT FUNCIONES Y ESTADOS PARA GESTIONAR EL CAMBIO DE MONEDA
   const { currencyConverter, converter, handleConverter } = useContext(context);
 
   return (

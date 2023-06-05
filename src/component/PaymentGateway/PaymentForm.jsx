@@ -3,6 +3,7 @@ import BankCard from "./BankCard";
 import PaymentFormContent from "./PaymentFormContent";
 import "./paymentForm.css";
 
+// OBJETO PARA EL ESTADO INICIAL DEL FORMULARIO
 const initialForm = {
   cartNumber: "",
   name: "",
@@ -16,7 +17,10 @@ const initialForm = {
 };
 
 function PaymentForm() {
+  
+  // ESTADO DE FORMULARIO
   const [form, setForm] = useState(initialForm);
+
   document.title = "GuilleDev - pasarela de pago";
   return (
     <div className="paymentForm">

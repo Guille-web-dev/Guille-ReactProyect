@@ -3,8 +3,11 @@ import "./style-header-footer.css";
 import { Link } from "react-router-dom";
 import { context } from "../provider";
 import logoCarrito from "../../../public/cart3.svg";
+
 function NavBar() {
+  // EXTRAYENDO ESTADO QUE CONTIENE LOS PRODUCTOS EN CARRITO 
   const { cartItem } = useContext(context);
+
   return (
     <header className="header">
       <div className="containerNavbar">

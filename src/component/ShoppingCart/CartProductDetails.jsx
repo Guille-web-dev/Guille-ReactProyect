@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import { context } from "../provider";
 
 function CartProductDetails({ product }) {
+  
+  // EXTRAYENDO DEL CONTEXT FUNCIONES DE AGREGAR, DIMINUIR Y ELIMINAR PRODUCTOS EN CARRITO 
   const {addToCart,decreaseItemQuantity,deleteItem} = useContext(context)
+  
   const { img, price, quantity, name, id } = product;
 
   return (

@@ -7,8 +7,11 @@ import "./styleProducts-details.css"
 function ProductDetails() {
   document.title = "Detalles de producto"
   
+  // ID DEL PRODUCTO EN LA URL
   const {id} = useParams();
   const productId = parseInt(id)
+
+  // EXPRESION PARA ENCONTRAR PRODUCTO QUE COINCIDA CON EL ID
   const newProducto = ProductsInArray.find((el) => el.id === productId);
  
   if (!newProducto) {

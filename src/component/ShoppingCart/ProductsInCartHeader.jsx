@@ -2,7 +2,10 @@ import { useContext } from "react";
 import { context } from "../provider";
 
 function ProductsInCartHeader() {
+
+  // EXTRAYENDO DEL CONTEXT FUNCION PARA VACIAR EL CARRITO
     const {emptyCart} = useContext(context)
+    
   return (
     <div className="cartCardHeader">
       <div className="containerTitleHeader">
